@@ -1,0 +1,16 @@
+---
+title: CMU Soundbytes
+subtitle: Website Creation
+layout: default
+modal-id: 1
+date: 2017-03-01
+img: Soundbytes.png
+thumbnail: Soundbytes-thumbnail.png
+alt: image-alt
+project-date: January-March 2017
+client: CMU Soundbytes
+link: www.cmusoundbytes.com
+category: Website Development & Design
+description: I created and designed a website for the Soundbytes, an a cappella group at CMU, by using the Jekyll Ruby gem.  Based off of a mixture of different templates, the website itself was constructed and redesigned to fit the needs of the group, including easily updateable content and a blog page for the group to share future info regarding their events.
+
+---

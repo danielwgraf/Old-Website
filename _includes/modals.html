@@ -1,0 +1,176 @@
+
+<style>
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+/* The Close Button */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
+body.modal-open {
+    overflow: hidden;
+}
+</style>
+
+<h2>Modal Example</h2>
+
+<!-- Trigger/Open The Modal -->
+<section id="portfolio" class="bg-light-gray">
+  <div class="container">
+      <div class="row">
+      {% for post in site.posts %}
+        <div id="portmodal{{ post.modal-id }}" class="col-md-4 col-sm-6 portfolio-item">
+          <div class="portfolio-link" data-toggle="modal">
+              <div class="portfolio-hover">
+                  <div class="portfolio-hover-content">
+                      <i class="fa fa-plus fa-3x"></i>
+                  </div>
+              </div>
+              <img src="img/portfolio/{{ post.thumbnail }}" class="img-responsive img-centered" alt="">
+            <div class="portfolio-caption">
+                <h4>{{ post.title }}</h4>
+                <p class="text-muted">{{ post.subtitle }}</p>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+      </div>
+  </div>
+</section>
+
+<!--<button id="myBtn">Open Modal</button>-->
+
+<!-- The Modal -->
+{% for post in site.posts %}
+<div id="myModal{{ post.modal-id }}" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span id="close{{ post.modal-id }}" class="close {{ post.modal-id }}">&times;</span>
+    <h2>{{ post.title }}</h2>
+    {{ post.title }}
+  </div>
+
+</div>
+{% endfor %}
+
+<script>
+  
+{% for post in site.posts %}
+  // Get the modal
+  var modal{{ post.modal-id }} = document.getElementById('myModal{{ post.modal-id }}');
+
+  // Get the button that opens the modal
+  var btn{{ post.modal-id }} = document.getElementById("portmodal{{ post.modal-id }}");
+
+  // Get the <span> element that closes the modal
+  var span{{ post.modal-id }} = document.getElementsByClassName("close {{ post.modal-id }}")[0];
+
+  // When the user clicks the button, open the modal 
+  btn{{ post.modal-id }}.onclick = function() {
+      modal{{ post.modal-id }}.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  span{{ post.modal-id }}.onclick = function() {
+      modal{{ post.modal-id }}.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+      if (event.target == modal{{ post.modal-id }}) {
+          modal{{ post.modal-id }}.style.display = "none";
+      }
+  }
+  
+{% endfor %}
+</script>
+
+<script>
+  {% for post in site.posts %}
+    $(document).ready(function () {
+      $("#portmodal{{ post.modal-id }}").on("click", function () {
+        $("body").addClass("modal-open");
+      })
+      $("#close{{ post.modal-id }}").on("click", function () {
+        $("body").removeClass("modal-open")
+      });
+    });
+  {% endfor %}
+</script>
+
+
+<!--
+  Portfolio Modals 
+ {% for post in site.posts %}
+    <div class="portfolio-modal modal fade" id="portfolioModal{{ post.modal-id }}" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>{{ post.title }}</h2>
+                            <hr class="star-primary">
+                            <img src="img/portfolio/{{ post.img }}" class="img-responsive img-centered" alt="{{ post.alt }}">
+                            <p>{{ post.description }}</p>
+                            <ul class="list-inline item-details">
+                                <li>Client:
+                                    <strong><a href="http://startbootstrap.com">{{ post.client }}</a>
+                                    </strong>
+                                </li>
+                                <li>Date:
+                                    <strong><a href="http://startbootstrap.com">{{ post.project-date }}</a>
+                                    </strong>
+                                </li>
+                                <li>Service:
+                                    <strong><a href="http://startbootstrap.com">{{ post.category }}</a>
+                                    </strong>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+-->

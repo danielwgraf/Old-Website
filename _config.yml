@@ -1,0 +1,59 @@
+# Welcome to Jekyll!
+#
+
+# Site settings
+title: Daniel Graf | Developer
+description: |
+  B.S Information Systems  
+  Carnegie Mellon University  
+  Please Hire Me.
+owner: Daniel Graf
+first_published: 2017 # if migrating another site, the year of your first publish
+email: danielgraf.developer@gmail.com
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://www.danielwgraf.com" # the base hostname & protocol for your site
+social:
+  #twitter: https://twitter.com/<username>
+  github: https://github.com/grafmark59
+  linkedin-square: https://www.linkedin.com/in/daniel-graf-301278139/
+  facebook-official: https://www.facebook.com/daniel.graf.2
+  #google-plus-square: https://plus.google.com/u/0/+<username>
+  #email: /contact/
+  #flickr:
+  #instagram:
+  #youtube-square:
+  #spotify:
+  #stack-overflow:
+  #vimeo:
+  #reddit:
+  #stubleupon:
+  #delicious:
+  #pied-piper:
+  #digg:
+  #soundcloud:
+  #deviantart:
+  #angellist:
+  #tumblr-square:
+  #stackexchange:
+  #weibo:
+  #trello:
+  #foursquare:
+  #linux:
+  #bitbucket-square:
+  #vk:
+  #slack:
+  #vine:
+  #weixin:
+  #yelp:
+  #skyatlas:
+  #leanpub:
+  #connectdevelop:
+  #ils:
+  #forumbee:
+  #tripadvisor:
+  #amazon:
+
+# Build settings
+markdown: kramdown
+#sass:
+#  style: compressed
