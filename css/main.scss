@@ -1922,10 +1922,48 @@ $baseurl: '{{ site.baseurl }}/images';
     z-index: 2;
 }
 
+
+
 @media(min-width:767px) {
     #portfolio .portfolio-item {
         margin: 0 0 30px;
     }
+}
+
+#one {
+  .more {
+      border: none;
+      bottom: 0;
+      color: inherit;
+      font-size: 0.8em;
+      height: 8.5em;
+      left: 50%;
+      letter-spacing: _size(letter-spacing-alt);
+      margin-left: -8.5em;
+      opacity: 1;
+      outline: 0;
+      padding-left: _size(letter-spacing-alt);
+      text-align: center;
+      text-transform: uppercase;
+      position: relative;
+      display: block;
+      width: 16em;
+      z-index: 1;
+
+      &:after {
+          background-image: url('images/arrow.svg');
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
+          bottom: 4em;
+          content: '';
+          display: block;
+          height: 1.5em;
+          left: 50%;
+          margin: 0 0 0 -0.75em;
+          width: 1.5em;
+      }
+  }
 }
 
 .portfolio-modal .modal-content {
